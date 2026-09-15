@@ -6,9 +6,11 @@
 
 Odatda, avval **login ekrani**dan o'tish kerak bo'ladi — bu yerda haqiqiy hisob ma'lumotlari (username va parol) kiritiladi. Bu hisob — o'sha tizimdagi mavjud Windows account yoki, agar mashina domenga ulangan bo'lsa, **Active Directory** muhitidagi hisob bo'lishi mumkin.
 
-## 🧩 GUI'ning asosiy qismlari
+![Windows 10 Desktop namunasi](screenshots/desktop-overview.png)
 
-Windows Desktop quyidagi komponentlardan tashkil topgan:
+Yuqoridagi skrinshot — odatiy Windows Desktop namunasi. GUI'ni tashkil etuvchi har bir komponent quyida qisqacha tushuntirilgan.
+
+## 🧩 GUI'ning asosiy qismlari
 
 1. **The Desktop** — ish stoli
 2. **Start Menu** — boshlash menyusi
@@ -32,15 +34,23 @@ Desktop bo'sh joyiga o'ng tugma bilan bosilganda, kontekst menyu chiqadi. Bu men
 - Nusxa ko'chirish/joylashtirish (copy/paste)
 - Yangi element yaratish (papka, shortcut, matn hujjati)
 
+![Desktop kontekst menyusi](screenshots/desktop-context-menu.png)
+
 **Display settings** orqali:
 - Ekran ruxsati (resolution) va orientatsiyasini o'zgartirish
 - Bir nechta monitor bo'lsa, multi-screen sozlamalarini boshqarish
 
+![Display settings va Personalize tugmalari](screenshots/display-personalize-menu.png)
+
 > 📌 **Eslatma:** Remote Desktop sessiyasida ba'zi display sozlamalari o'chirilgan (disabled) bo'ladi.
+
+![Display sozlamalari oynasi (Remote sessiyada cheklangan)](screenshots/display-settings-window.png)
 
 **Personalize** orqali:
 - Fon rasmini (wallpaper) o'zgartirish
 - Shriftlar, mavzular (themes), rang sxemasini sozlash
+
+![Personalize — Background sozlamalari](screenshots/personalize-background.png)
 
 ---
 
@@ -51,6 +61,7 @@ Avvalgi Windows versiyalarida ekranning chap pastki burchagida "Start" so'zi ko'
 Windows logotipiga bosilganda, Start Menu ochiladi. U bir nechta bo'limdan iborat:
 
 ### 1-bo'lim — Hisob va tizim amallari
+
 Bu yerda hisobga oid qisqa yo'llar joylashgan: hisobni o'zgartirish, ekranni bloklash, tizimdan chiqish. Shuningdek:
 - **Hujjatlar (Documents)** va **Rasmlar (Pictures)** papkalariga yorliqlar
 - **Sozlamalar (Settings)** — tishli g'ildirak belgisi orqali
@@ -58,23 +69,37 @@ Bu yerda hisobga oid qisqa yo'llar joylashgan: hisobni o'zgartirish, ekranni blo
 
 Bu bo'limni kengaytirish uchun yuqoridagi "gamburger" ko'rinishidagi belgiga bosiladi.
 
+![Start Menu — 1-bo'lim (hisob amallari)](screenshots/start-menu-section1.png)
+
 ### 2-bo'lim — Ilovalar ro'yxati
+
 - Yuqori qismda **yaqinda qo'shilgan** ilovalar/dasturlar ko'rsatiladi
 - Pastda **o'rnatilgan barcha ilovalar** alifbo tartibida, har bir harf o'z bo'limiga ega bo'lgan holda ko'rsatiladi
 
 > 📌 **Eslatma:** Ba'zi VM'larda Google Chrome endi "Recently Added" bo'limida ko'rinmaydi.
 
+![Start Menu — 2-bo'lim (Recently added va Installed apps)](screenshots/start-menu-section2.png)
+
 Agar o'rnatilgan dasturlar ro'yxati juda uzun bo'lsa, harflar ustiga bosib, alifbo panjarasi (alphabet grid) orqali kerakli bo'limga to'g'ridan-to'g'ri o'tish mumkin.
 
+![Alifbo panjarasi (alphabet grid)](screenshots/start-menu-alphabet-grid.png)
+
 ### 3-bo'lim — Tile'lar (Ilovalar kartochkalari)
+
 Start Menu'ning o'ng tomonida maxsus ilova/dastur yoki vositalar uchun belgilar joylashgan — bular **tile** deb ataladi. Ba'zilari standart holatda qo'shilgan bo'ladi.
+
+![Start Menu tile'lari](screenshots/start-menu-tiles.png)
 
 Tile ustiga o'ng tugma bilan bosilsa, qo'shimcha amallar menyusi chiqadi:
 - O'lchamini o'zgartirish
 - Start Menu'dan olib tashlash (unpin)
 - Xususiyatlarini (Properties) ko'rish
 
+![Tile ustida o'ng tugma menyusi](screenshots/start-menu-tile-context.png)
+
 Dasturni Start Menu'ga qo'shish uchun: dastur ustiga o'ng tugma bosib, **"Pin to Start"** tanlanadi.
+
+![Pin to Start amali](screenshots/pin-to-start.png)
 
 ---
 
@@ -84,7 +109,11 @@ Ba'zi komponentlar standart holatda yoqilgan va ko'rinadi. Masalan, **Toolbar** 
 
 Taskbar'ga o'ng tugma bilan bosilsa, kontekst menyu chiqadi — bu orqali qaysi komponentlarni yoqish/o'chirishni sozlash mumkin.
 
+![Taskbar kontekst menyusi](screenshots/taskbar-context-menu.png)
+
 Ochilgan/ishga tushirilgan har qanday dastur, papka yoki fayl — taskbar'da ko'rinadi. Belgi ustiga sichqonchani olib borilsa, **preview thumbnail** va tooltip chiqadi — bu, masalan, bir nechta Google Chrome oynasi ochiq bo'lsa, kerakli oynani topishda foydali.
+
+![Taskbar preview thumbnail](screenshots/taskbar-preview.png)
 
 Element yopilganda, u taskbar'dan yo'qoladi — **agar aniq pin qilinmagan bo'lsa**.
 
@@ -98,6 +127,8 @@ Odatda ekranning **pastki o'ng burchagida** joylashgan — bu yerda sana va vaqt
 - va boshqa tizim belgilari
 
 Belgilarni qo'shish yoki olib tashlash **Taskbar settings** orqali, **Notification Area** bo'limida amalga oshiriladi.
+
+![Notification Area sozlamalari](screenshots/notification-area-settings.png)
 
 ---
 
