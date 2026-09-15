@@ -87,3 +87,55 @@ Cron formatini yaxshiroq o'zlashtirish uchun quyidagi misollarni ham o'zingiz yo
 - `0 8 * * 1,3,5` — dushanba, chorshanba va juma kunlari soat 8:00da ishga tushadi
 
 Har birini `crontab -e` orqali kiritib, `crontab -l` bilan tekshirib boring — shu tariqa format qanday o'zgarishini his qilasiz.
+
+## Package Management
+
+## 📦 Packages va Software Repos nima?
+
+Dasturchilar dasturiy ta'minotni jamiyat bilan ulashmoqchi bo'lganda, ular **"apt" repository**siga topshiradi. Agar tasdiqlansa, dastur/tool ommaga chiqariladi. Bu yerda Linux'ning ikkita muhim afzalligi ko'rinadi: **foydalanuvchi qulayligi** va **ochiq manba (open source) dasturlarning qiymati**.
+
+Ubuntu 20.04'da `ls` buyrug'ini repository ro'yxati fayllariga qo'llasangiz, bu fayllar tizim uchun **"darvoza/registr"** vazifasini bajaradi.
+
+Operatsion tizim ishlab chiqaruvchilari o'z repository'larini saqlab turadi, lekin foydalanuvchi sifatida siz ham **jamiyat (community) repository'larini** qo'shishingiz mumkin! Bu OS imkoniyatlarini kengaytiradi. Qo'shimcha repository'lar `add-apt-repository` buyrug'i orqali yoki boshqa provayderni ro'yxatga kiritish orqali qo'shiladi (masalan, ba'zi vendorlar geografik jihatdan yaqinroq repository'ga ega bo'ladi).
+
+## ⚙️ Repository'larni boshqarish (qo'shish va o'chirish)
+
+Odatda dastur o'rnatish uchun **`apt`** buyrug'idan foydalaniladi. `apt` — bu paket boshqaruv dasturining bir qismi bo'lib, u paketlar va manbalarni (sources) boshqarish, dastur o'rnatish yoki o'chirish imkonini beradi.
+
+Repository qo'shishning bir usuli — `add-apt-repository` buyrug'i, lekin buni **qo'lda** ham bajarish mumkin. `dpkg` kabi paket o'rnatuvchilar orqali ham dastur o'rnatish mumkin, lekin `apt`ning afzalligi shundaki — tizim yangilanganda, qo'shilgan repository'dagi dasturlar ham avtomatik tekshiriladi.
+
+### 🔐 GPG kalitlari nima uchun kerak?
+
+Dastur qo'shilganda, yuklab olinayotgan narsaning haqiqiyligi **GPG (Gnu Privacy Guard)** kalitlari orqali kafolatlanadi. Bu kalitlar — ishlab chiqaruvchilardan kelgan "bu bizning dasturimiz" degan xavfsizlik tasdig'i. Agar kalit tizim ishongan narsaga mos kelmasa, dastur yuklab olinmaydi.
+
+## 🛠️ Misol: Sublime Text repository qo'shish (nazariy)
+
+Sublime Text — standart Ubuntu repository'sida yo'q, shuning uchun uni qo'lda repository sifatida qo'shish kerak bo'ladi.
+
+**1-qadam:** GPG kalitini yuklab, ishonchli deb belgilash:
+```bash
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+```
+
+**2-qadam:** Repository faylini yaratish. Yaxshi amaliyot — har bir 3rd-party repository uchun alohida fayl yaratish. `/etc/apt/sources.list.d/` papkasida `sublime-text.list` nomli fayl yaratiladi va ichiga repository manzili kiritiladi (Nano yoki boshqa matn muharriri orqali).
+
+**3-qadam:** Yangi manbani tizimga tanitish uchun `apt update` ishlatiladi:
+```bash
+sudo apt update
+```
+
+**4-qadam:** Dasturni o'rnatish:
+```bash
+sudo apt install sublime-text
+```
+
+## 🗑️ Paketni olib tashlash
+
+O'chirish — qo'shishning teskarisi. Ikki usul bor:
+- `add-apt-repository --remove ppa:PPA_Name/ppa` buyrug'i orqali
+- Yoki qo'shilgan faylni qo'lda o'chirish orqali
+
+Repository o'chirilgach, dasturning o'zini olib tashlash uchun:
+```bash
+sudo apt remove sublime-text
+```
