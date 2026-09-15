@@ -1,0 +1,9 @@
+Cron va Crontab - Tizim yoqilgandan keyin (yoki muntazam ravishda) avtomatik bajariladigan vazifalarni 
+sozlash uchun. Masalan: fayllarni backup qilish, dasturlarni ishga tushirish, buyruqlarni
+jadval bo'yicha bajarish.
+
+⚙️ Cron nima?
+Cron — bu tizim yuklanganda ishga tushadigan process (background'da doim ishlaydi). 
+U crontab fayllarini o'qib, unda yozilgan vazifalarni belgilangan vaqtda bajaradi.
+Crontab — cron uchun maxsus formatdagi fayl, har bir qator alohida vazifa.
+
