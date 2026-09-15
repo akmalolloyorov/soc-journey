@@ -23,11 +23,11 @@ Tizim yoqilgandan keyin (yoki muntazam ravishda) avtomatik bajariladigan vazifal
 
 ## 💡 Misol
 
-Har 12 soatda `cmnatic` foydalanuvchisining `Documents` papkasini backup qilish:
+Har 12 soatda `cmnatic` foydalanuvchisining `Documents` papkasini backup qilish uchun quyidagi qator yoziladi:
 
-​```bash
+```bash
 0 */12 * * * cp -R /home/cmnatic/Documents /var/backups/
-​```
+```
 
 **Izoh:**
 - `0` — 0-minutda
@@ -45,9 +45,45 @@ Agar biror qiymat muhim bo'lmasa (masalan, "qaysi oy" farqi yo'q), o'sha joyga `
 
 ## 📝 Tahrirlash
 
-\`\`\`bash
+```bash
 crontab -e
-\`\`\`
+```
 Bu buyruq crontab faylini ochadi (odatda Nano editor bilan), o'zgarishlar shu yerda kiritiladi.
 
+## Task 1 — Automation (Amaliy mashq)
 
+Cron qanday ishlashini tushunish uchun eng yaxshi yo'l — uni amalda sinab ko'rish. Quyidagi qadamlarni ketma-ket bajaring:
+
+**1-qadam:** Crontab editorni oching:
+```bash
+crontab -e
+```
+
+**2-qadam:** Quyidagi qatorni qo'shing — bu har daqiqada joriy vaqtni faylga yozadi:
+```bash
+* * * * * date >> /home/Admin/Documents/cron-test.log
+```
+
+**3-qadam:** Saqlab chiqing (`Ctrl+O` → `Enter` → `Ctrl+X`), so'ng tekshiring:
+```bash
+crontab -l
+```
+
+**4-qadam:** Bir necha daqiqa kutib, natijani ko'ring:
+```bash
+cat /home/Admin/Documents/cron-test.log
+```
+
+Agar hammasi to'g'ri ishlagan bo'lsa, quyidagidek natija chiqadi — har daqiqada aniq bitta yangi qator qo'shilib boradi:
+
+![Cron job natijasi — har daqiqada log yozilishi](screenshots/cron-test-log.png)
+
+### Qo'shimcha mashq: turli vaqt formatlarini sinab ko'ring
+
+Cron formatini yaxshiroq o'zlashtirish uchun quyidagi misollarni ham o'zingiz yozib ko'ring:
+
+- `0 */12 * * *` — har 12 soatda ishga tushadi
+- `45 23 1,15 2,4,6,8,10,12 *` — oyning 1- va 15-kunlarida, belgilangan oylarda (fevral, aprel, iyun, avgust, oktyabr, dekabr), soat 23:45da ishga tushadi
+- `0 8 * * 1,3,5` — dushanba, chorshanba va juma kunlari soat 8:00da ishga tushadi
+
+Har birini `crontab -e` orqali kiritib, `crontab -l` bilan tekshirib boring — shu tariqa format qanday o'zgarishini his qilasiz.
