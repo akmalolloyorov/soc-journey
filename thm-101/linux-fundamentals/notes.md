@@ -139,3 +139,30 @@ Repository o'chirilgach, dasturning o'zini olib tashlash uchun:
 ```bash
 sudo apt remove sublime-text
 ```
+
+## Logs
+
+## 📜 Log fayllari nima?
+
+Log fayllar **`/var/log`** papkasida joylashgan. Bu fayllar va papkalar tizimda ishlayotgan dasturlar va servislar haqidagi **logging (qayd qilish) ma'lumotlarini** o'z ichiga oladi. Operatsion tizim (OS) bu loglarni avtomatik boshqarishda ancha yaxshi rivojlangan — bu jarayon **"rotating" (aylantirish)** deb ataladi.
+
+## 🖥️ Uchta xizmat misolida loglar
+
+Ubuntu mashinasida ishlaydigan uchta xizmatning loglariga misol:
+
+1. **Apache2 web server** — veb-server loglari
+2. **fail2ban** xizmati — brute-force (parolni zo'rlab topish) urinishlarini kuzatish uchun ishlatiladi
+3. **UFW** xizmati — firewall (xavfsizlik devori) sifatida ishlatiladi
+
+## 🛡️ Nega bu loglar muhim?
+
+Bu xizmatlar va ularning loglari — tizim **sog'lig'ini kuzatish va himoya qilish** uchun ajoyib vosita. Bundan tashqari, veb-server kabi xizmatlarning loglari **har bir so'rov (request)** haqida ma'lumot saqlaydi — bu dasturchi yoki administratorga **ishlash muammolarini aniqlash** yoki **buzg'unchi (intruder) faoliyatini tekshirish** imkonini beradi.
+
+Masalan, ikki turdagi muhim log fayllari:
+- **access log** — kim, qachon, qanday so'rov yuborganini yozadi
+- **error log** — xatoliklar haqida ma'lumot saqlaydi
+
+## 👤 OS va foydalanuvchi loglari
+
+Bulardan tashqari, operatsion tizimning o'zi qanday ishlayotgani va foydalanuvchilar tomonidan bajarilgan amallar (masalan, **autentifikatsiya urinishlari**) haqida ma'lumot saqlaydigan loglar ham mavjud.
+
